@@ -2,6 +2,7 @@ from flask import Flask, redirect, render_template, request
 
 from src.repositories.movie_repository import get_movie_repository
 
+
 app = Flask(__name__)
 
 # Get the movie repository singleton to use throughout the application
@@ -31,8 +32,7 @@ def create_movie():
     entered_movie_name = request.form.get('name')
     entered_director_name = request.form.get('director-name')
     entered_rating = request.form.get('select-rating')
-    create_movie(entered_movie_name,entered_director_name,entered_rating)
-    
+    movie_repository.create_movie(entered_movie_name,entered_director_name,entered_rating)
     return redirect('/movies')
 
 
