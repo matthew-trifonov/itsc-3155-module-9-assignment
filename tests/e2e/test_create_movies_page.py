@@ -9,7 +9,7 @@ def test_create_movie(test_app):
     response = test_app.post('/movies', data={
         "name": "test movie name",
         "director-name": "test director name",
-        "select-rating": "test rating"
+        "select-rating": 3
     }, follow_redirects=True)
 
     data = response.data.decode('utf-8')

@@ -38,6 +38,7 @@ def create_movie():
         abort(400)
     if not entered_rating:
         abort(400)
+    entered_rating = int(entered_rating)
     movie_repository.create_movie(entered_movie_name,entered_director_name,entered_rating)
     return redirect('/movies')
 
