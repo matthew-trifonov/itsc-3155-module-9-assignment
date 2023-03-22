@@ -46,7 +46,11 @@ def create_movie():
 @app.get('/movies/search')
 def search_movies():
     # TODO: Feature 3
-    return render_template('search_movies.html', search_active=True)
+    if(movie_repository.get_movie_by_title(request.args.get('title')) != None):
+        rating = movie_repository.get_movie_by_title(request.args.get('title')).rating
+        return render_template('search_movies.html', search_active=True, rating=rating)
+    else:
+        return render_template('search_movies.html')
 
 
 @app.get('/movies/<int:movie_id>')
