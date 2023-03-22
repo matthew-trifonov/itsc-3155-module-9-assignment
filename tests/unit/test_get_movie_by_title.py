@@ -10,6 +10,7 @@ def test_get_movie_by_title():
     repo.create_movie('The Shawshank Redemption', 'Frank Darabont', 9.3)
     repo.create_movie('The Godfather', 'Francis Ford Coppola', 9.2)
 
-    assert repo.get_movie_by_title('The Godfather')
+    movie1 = repo.get_movie_by_title('The Godfather')
+    assert movie1.title == 'The Godfather'
     assert repo.get_movie_by_title('Harry Potter') == None
 
