@@ -3,6 +3,32 @@
 {% block title %}Movie Rating App | Movie{% endblock %}
 
 {% block body %}
-<h1 class="mb-5"></h1>
-<!-- TODO: Feature 4 -->
+<div class="container">
+    <h1 class="mb-5"></h1>
+    <!-- TODO: Feature 4 -->
+    <!-- Table to show selected movie name, director, and rating-->
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Movie </th>
+                <th> Director </th>
+                <th> Rating </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{single_movie.title}}</td>
+                <td>{{single_movie.director}}</td>
+                <td>{{single_movie.rating}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--Edit Button to edit movie-->
+<a href="{{ url_for('get_edit_movies_page', movie_id=single_movie.movie_id) }}">
+<button type = "button">Edit
+</button>
+</a>
+
+
 {% endblock %}
