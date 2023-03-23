@@ -8,7 +8,6 @@ def test_get_single_movie(test_app):
     test_movie = movie_repository.create_movie("Back to the Future", "Robert Zemeckis", 4)
     
 
-    # 
     response = test_app.get(f'/movies/{test_movie.movie_id}')
     data = response.data.decode('utf-8')
     assert response.status_code == 200
