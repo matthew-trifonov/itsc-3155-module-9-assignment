@@ -5,4 +5,31 @@
 {% block body %}
 <h1 class="mb-5"></h1>
 <!-- TODO: Feature 5 -->
+<div>
+    <form action="{{ url_for('update_movie', movie_id=single_movie.movie_id) }}" method="post">
+        <div>
+            <label for="name">Movie Name</label> <!-- use 'name' in app to store the name from the form-->
+            <input class="form-control mb-4" type="text" name="name" id="name" required placeholder="Enter Movie Name">
+        </div>
+
+        <div>
+            <label for="director-name">Director Name</label> <!-- use 'director-name' in app to store the name from the form-->
+            <input class="form-control mb-4" type="text" name="director-name" id="director-name" required placeholder="Enter Director Name">
+        </div>
+    
+        <div>
+            <label for="select-rating">Rating</label>
+            <select id="select-rating" name ="select-rating" class="form-control mb-4" required>
+                <option value="" disabled selected>Choose a rating</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+    
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
 {% endblock %}

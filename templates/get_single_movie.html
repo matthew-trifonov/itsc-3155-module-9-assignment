@@ -20,15 +20,12 @@
                 <td>{{single_movie.title}}</td>
                 <td>{{single_movie.director}}</td>
                 <td>{{single_movie.rating}}</td>
+                <td><a href="{{ url_for('get_edit_movies_page', movie_id=single_movie.movie_id) }}">
+                    <button class="btn-primary" type = "button">Edit</button>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
 </div>
-<!--Edit Button to edit movie-->
-<a href="{{ url_for('get_edit_movies_page', movie_id=single_movie.movie_id) }}">
-<button type = "button">Edit
-</button>
-</a>
-
-
 {% endblock %}
